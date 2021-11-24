@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import BookList from '@/views/BookList.vue';
+import BookDetail from '@/components/BookDetail.vue';
 
 /**
  * Vueのプラグインインストール
@@ -22,6 +24,22 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/About.vue'),
+  },
+  {
+    path: '/book',
+    name: 'BookList',
+    component: BookList,
+  },
+  {
+    path: '/book/:id',
+    name: 'Book',
+    component: BookDetail,
+    props: (route) => ({
+      // Stringで返ってくる可能性があるのでキャスト
+      id: Number(route.params.id),
+      title: route.params.title,
+      content: route.params.content,
+    }),
   },
 ];
 
