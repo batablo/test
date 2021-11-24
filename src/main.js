@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import router from './router';
 
 // 開発モード警告文をconsoleで出すかどうか
 Vue.config.productionTip = false;
@@ -10,5 +11,6 @@ Vue.config.productionTip = false;
  * $mountはマウントするelementを渡す
  */
 new Vue({
+  router,
   render: (h) => h(App),
 }).$mount('#app');
