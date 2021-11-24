@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import BookList from '@/views/BookList.vue';
 import Item from '@/views/Item.vue';
 import BookDetail from '@/components/BookDetail.vue';
+import NotFound from '@/components/NotFound.vue';
 
 /**
  * Vueのプラグインインストール
@@ -46,6 +47,13 @@ const routes = [
     path: '/item/:id',
     name: 'item',
     component: Item,
+  },
+  {
+    // 上のpath群にマッチしないもの全て対象
+    path: '*',
+    // redirect: '/',
+    name: 'notFound',
+    component: NotFound,
   },
 ];
 
