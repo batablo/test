@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <!-- <router-link to="/about" tag="button">About</router-link> -->
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
@@ -24,9 +25,15 @@
     font-weight: bold;
     color: #2c3e50;
 
+    /* 表示されているページとパスが完全一致している場合につく */
     &.router-link-exact-active {
       color: #42b983;
     }
+
+    /* 表示されているページにパスが含まれる場合につく */
+    /* &.router-link-active {
+      color: red;
+    } */
   }
 }
 </style>

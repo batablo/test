@@ -2,6 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 
+/**
+ * Vueのプラグインインストール
+ * new Vue()を呼び出す前にやらないとダメ
+ */
 Vue.use(VueRouter);
 
 const routes = [
