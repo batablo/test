@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import BookList from '@/views/BookList.vue';
+import Item from '@/views/Item.vue';
 import BookDetail from '@/components/BookDetail.vue';
 
 /**
@@ -40,6 +41,11 @@ const routes = [
       title: route.params.title,
       content: route.params.content,
     }),
+  },
+  {
+    path: '/item/:id',
+    name: 'item',
+    component: Item,
   },
 ];
 
