@@ -5,9 +5,12 @@
       <!-- <router-link to="/about" tag="button">About</router-link> -->
       <router-link to="/about">About</router-link> |
       <router-link to="/book">BookList</router-link> |
-      <router-link to="/item/1">Item</router-link>
+      <router-link to="/item/1">Item</router-link> |
+      <router-link to="/user/profile">User</router-link>
     </div>
-    <router-view />
+    <div class="blue-b">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -37,5 +40,9 @@
       color: red;
     } */
   }
+}
+
+.blue-b {
+  border: 1px blue solid;
 }
 </style>

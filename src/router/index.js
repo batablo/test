@@ -5,6 +5,9 @@ import BookList from '@/views/BookList.vue';
 import Item from '@/views/Item.vue';
 import BookDetail from '@/components/BookDetail.vue';
 import NotFound from '@/components/NotFound.vue';
+import User from '@/views/User.vue';
+import UserProfile from '@/components/UserProfile.vue';
+import UserPost from '@/components/UserPost.vue';
 
 /**
  * Vueのプラグインインストール
@@ -47,6 +50,21 @@ const routes = [
     path: '/item/:id',
     name: 'item',
     component: Item,
+  },
+  // ネストするパスはnameを書かない
+  {
+    path: '/user',
+    component: User,
+    children: [
+      {
+        path: 'profile',
+        component: UserProfile,
+      },
+      {
+        path: 'post',
+        component: UserPost,
+      },
+    ],
   },
   {
     // 上のpath群にマッチしないもの全て対象
