@@ -8,6 +8,7 @@ import NotFound from '@/components/NotFound.vue';
 import User from '@/views/User.vue';
 import UserProfile from '@/components/UserProfile.vue';
 import UserPost from '@/components/UserPost.vue';
+import HomeSub from '@/components/HomeSub.vue';
 
 /**
  * Vueのプラグインインストール
@@ -19,7 +20,10 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    components: {
+      default: Home,
+      sub: HomeSub,
+    },
   },
   {
     path: '/about',
