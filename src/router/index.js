@@ -54,6 +54,7 @@ const routes = [
     path: '/item/:id',
     name: 'item',
     component: Item,
+    // beforeEnter: (to, from, next) => {},
   },
   // ネストするパスはnameを書かない
   {
@@ -84,5 +85,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+// router.beforeEach((to, from, next) => {
+//   console.log(to);
+//   console.log(from);
+//   next();
+// });
 
 export default router;

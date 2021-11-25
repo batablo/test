@@ -19,5 +19,9 @@ export default {
       this.$router.push('/');
     },
   },
+  beforeRouteLeave(to, from, next) {
+    const checkLeave = window.confirm('本当にこのページを離れますか？');
+    checkLeave ? next() : next(false);
+  },
 };
 </script>
